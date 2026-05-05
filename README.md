@@ -7,13 +7,13 @@ A terminal-first 2FA code manager with encrypted local storage and an interactiv
 Install globally using npm:
 
 ```bash
-npm install -g tofa
+npm install -g @ribaunt/tofa
 ```
 
 Or with bun:
 
 ```bash
-bun install -g tofa
+bun install -g @ribaunt/tofa
 ```
 
 ## Usage
