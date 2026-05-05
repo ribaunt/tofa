@@ -25,15 +25,15 @@
     "LICENSE"
   ],
   "bin": {
-    "tofa": "./dist/index.js"
+    "tofa": "dist/index.js"
   },
   "scripts": {
     "dev": "bun run --watch src/index.tsx",
     "start": "bun run src/index.tsx",
-    "build": "bun build src/index.tsx --target bun --outdir dist",
+    "build": "bun build src/index.tsx --target bun --outdir dist && echo '#!/usr/bin/env bun' | cat - dist/index.js > dist/index.tmp && mv dist/index.tmp dist/index.js && chmod +x dist/index.js",
     "typecheck": "bunx tsc --noEmit",
     "test": "bun test",
-    "prepublishOnly": "bun run build && bun run typecheck"
+    "prepublishOnly": "bun run build"
   },
   "devDependencies": {
     "@types/bun": "latest"
