@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 import { createCliRenderer, TextAttributes, type PasteEvent } from "@opentui/core";
 import { createDefaultOpenTuiKeymap } from "@opentui/keymap/opentui";
 import { KeymapProvider, useBindings } from "@opentui/keymap/react";
