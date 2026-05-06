@@ -1,4 +1,3 @@
-#!/usr/bin/env bun
 import { createCliRenderer, TextAttributes, type PasteEvent } from "@opentui/core";
 import { createDefaultOpenTuiKeymap } from "@opentui/keymap/opentui";
 import { KeymapProvider, useBindings } from "@opentui/keymap/react";
@@ -504,13 +503,13 @@ function App() {
         formKind === "add"
           ? [...accounts, createAccount(draft)]
           : accounts.map((account) =>
-              account.id === selectedAccount?.id
-                ? {
-                    ...account,
-                    ...draft,
-                  }
-                : account,
-            );
+            account.id === selectedAccount?.id
+              ? {
+                ...account,
+                ...draft,
+              }
+              : account,
+          );
 
       await saveAndSet(nextAccounts);
       setMode("dashboard");
@@ -1073,9 +1072,9 @@ function StatusBar(props: {
         : "j/k move  ↵ copy  / filter  a add  e edit  d del  i import  s set  h show  q"
       : props.mode === "delete"
         ? "hold y delete  n/esc abort"
-      : props.mode === "settings"
-        ? "j/k move  ↵ toggle  type colors  esc"
-      : "↵ confirm  esc";
+        : props.mode === "settings"
+          ? "j/k move  ↵ toggle  type colors  esc"
+          : "↵ confirm  esc";
   const hasProblem = isProblemMessage(props.message);
   const statusText = props.message || selectedPartDescription(props);
 
